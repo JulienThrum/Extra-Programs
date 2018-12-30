@@ -1,12 +1,15 @@
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import java.util.Timer;
 
 import java.util.ArrayList;
 
 public class MTUSnowfall {
 
     public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
+
         ArrayList<String> year = new ArrayList<>();
         ArrayList<String> oct = new ArrayList<>();
         ArrayList<String> nov = new ArrayList<>();
@@ -53,5 +56,7 @@ public class MTUSnowfall {
                     may.get(i),
                     total.get(i));
         }
+
+        System.out.println("\nData acquired and printed in " + (System.currentTimeMillis() -  startTime) + " milliseconds");
     }
 }
